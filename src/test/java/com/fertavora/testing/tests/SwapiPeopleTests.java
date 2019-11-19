@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class SwapiPeopleTests extends ServiceTests{
+public class SwapiPeopleTests extends ServiceTests {
 
     @DataProvider(name = "PeopleDataProvider")
     public Object[][] peopleData() {
@@ -21,13 +21,10 @@ public class SwapiPeopleTests extends ServiceTests{
 
     @Test(dataProvider = "PeopleDataProvider")
     public void requestPeopleById_checkResponseTimeAndValues(int id, String name, String gender) {
-        Long expectedTime = 3000L;
         Response res = PeopleEndpoint.getPeopleById(id);
-        Long responseTime = res.getTime();
         response = res.then();
         response.spec(responseSpecValid);
         PeopleResponse peopleResponse = response.extract().as(PeopleResponse.class);
-        Assert.assertTrue(responseTime <= expectedTime, "Response time threshold\nExpected: " + expectedTime + "\nActual: " + responseTime + "\n");
         Assert.assertEquals(peopleResponse.getName(), name, PeopleResponseErrors.NAME_IS_NOT_CORRECT);
         Assert.assertEquals(peopleResponse.getGender(), gender, PeopleResponseErrors.GENDER_IS_NOT_CORRECT);
     }

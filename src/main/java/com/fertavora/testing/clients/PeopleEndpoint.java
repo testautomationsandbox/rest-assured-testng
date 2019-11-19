@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.given;
 public class PeopleEndpoint extends SwapiService {
 
     private static RequestSpecification peopleRequest = given()
-            .spec(SwapiService.createRequestSpecification("/people"))
+            .spec(createRequestSpecification("/people"))
             .when();
 
     public static Response getPeopleById(int id) {
