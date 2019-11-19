@@ -1,23 +1,14 @@
 package com.fertavora.testing.tests;
 
-import com.fertavora.testing.clients.SwapiServer;
+import com.fertavora.testing.clients.PeopleEndpoint;
 import com.fertavora.testing.constants.PeopleResponseErrors;
 import com.fertavora.testing.responses.PeopleResponse;
-import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.http.ContentType;
-import io.restassured.response.ValidatableResponse;
-import io.restassured.specification.ResponseSpecification;
+import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class SwapiPeopleTests {
-
-    private static ValidatableResponse response;
-    private static ResponseSpecification responseSpecValid = new ResponseSpecBuilder().
-            expectStatusCode(200).
-            expectContentType(ContentType.JSON).
-            build();
+public class SwapiPeopleTests extends ServiceTests {
 
     @DataProvider(name = "PeopleDataProvider")
     public Object[][] peopleData() {
@@ -29,8 +20,9 @@ public class SwapiPeopleTests {
     }
 
     @Test(dataProvider = "PeopleDataProvider")
-    public void requestPeopleEndpoint_checkValues(int id, String name, String gender) {
-        response = SwapiServer.getPeopleById(id);
+    public void requestPeopleById_checkResponseTimeAndValues(int id, String name, String gender) {
+        Response res = PeopleEndpoint.getPeopleById(id);
+        response = res.then();
         response.spec(responseSpecValid);
         PeopleResponse peopleResponse = response.extract().as(PeopleResponse.class);
         Assert.assertEquals(peopleResponse.getName(), name, PeopleResponseErrors.NAME_IS_NOT_CORRECT);
