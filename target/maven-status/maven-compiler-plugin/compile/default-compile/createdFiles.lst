@@ -1,0 +1,5 @@
+com\fertavora\testing\clients\PeopleEndpoint.class
+com\fertavora\testing\clients\FilmsEndpoint.class
+com\fertavora\testing\responses\PeopleResponse.class
+com\fertavora\testing\clients\SwapiService.class
+com\fertavora\testing\constants\PeopleResponseErrors.class

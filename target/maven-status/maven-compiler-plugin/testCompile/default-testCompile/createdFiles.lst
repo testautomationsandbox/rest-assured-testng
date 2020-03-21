@@ -1,0 +1,4 @@
+com\fertavora\testing\tests\BasicChecks.class
+com\fertavora\testing\tests\ServiceTests.class
+com\fertavora\testing\tests\SwapiFilmsTests.class
+com\fertavora\testing\tests\SwapiPeopleTests.class

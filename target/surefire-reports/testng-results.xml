@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-03-21T12:17:22 ART" name="Surefire suite" finished-at="2020-03-21T12:17:28 ART" duration-ms="5705">
+    <groups>
+    </groups>
+    <test started-at="2020-03-21T12:17:22 ART" name="Surefire test" finished-at="2020-03-21T12:17:28 ART" duration-ms="5705">
+      <class name="com.fertavora.testing.tests.SwapiPeopleTests">
+        <test-method signature="requestPeopleById_checkResponseTimeAndValues(int, java.lang.String, java.lang.String)[pri:0, instance:com.fertavora.testing.tests.SwapiPeopleTests@178213b]" started-at="2020-03-21T12:17:24 ART" name="requestPeopleById_checkResponseTimeAndValues" data-provider="PeopleDataProvider" finished-at="2020-03-21T12:17:25 ART" duration-ms="1384" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Luke Skywalker]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[male]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- requestPeopleById_checkResponseTimeAndValues -->
+        <test-method signature="requestPeopleById_checkResponseTimeAndValues(int, java.lang.String, java.lang.String)[pri:0, instance:com.fertavora.testing.tests.SwapiPeopleTests@178213b]" started-at="2020-03-21T12:17:25 ART" name="requestPeopleById_checkResponseTimeAndValues" data-provider="PeopleDataProvider" finished-at="2020-03-21T12:17:27 ART" duration-ms="1176" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C-3PO]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[n/a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- requestPeopleById_checkResponseTimeAndValues -->
+        <test-method signature="requestPeopleById_checkResponseTimeAndValues(int, java.lang.String, java.lang.String)[pri:0, instance:com.fertavora.testing.tests.SwapiPeopleTests@178213b]" started-at="2020-03-21T12:17:27 ART" name="requestPeopleById_checkResponseTimeAndValues" data-provider="PeopleDataProvider" finished-at="2020-03-21T12:17:28 ART" duration-ms="924" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[R2-D2]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[n/a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- requestPeopleById_checkResponseTimeAndValues -->
+      </class> <!-- com.fertavora.testing.tests.SwapiPeopleTests -->
+      <class name="com.fertavora.testing.tests.SwapiFilmsTests">
+        <test-method is-config="true" signature="getRequest()[pri:0, instance:com.fertavora.testing.tests.SwapiFilmsTests@613a8ee1]" started-at="2020-03-21T12:17:22 ART" name="getRequest" finished-at="2020-03-21T12:17:24 ART" duration-ms="2190" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getRequest -->
+        <test-method signature="checkContentType()[pri:0, instance:com.fertavora.testing.tests.SwapiFilmsTests@613a8ee1]" started-at="2020-03-21T12:17:24 ART" name="checkContentType" finished-at="2020-03-21T12:17:24 ART" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkContentType -->
+        <test-method signature="checkResponseTime()[pri:0, instance:com.fertavora.testing.tests.SwapiFilmsTests@613a8ee1]" started-at="2020-03-21T12:17:24 ART" name="checkResponseTime" finished-at="2020-03-21T12:17:24 ART" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkResponseTime -->
+        <test-method signature="checkStatusCode()[pri:0, instance:com.fertavora.testing.tests.SwapiFilmsTests@613a8ee1]" started-at="2020-03-21T12:17:24 ART" name="checkStatusCode" finished-at="2020-03-21T12:17:24 ART" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkStatusCode -->
+      </class> <!-- com.fertavora.testing.tests.SwapiFilmsTests -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
