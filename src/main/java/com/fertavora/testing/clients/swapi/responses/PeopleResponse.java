@@ -1,4 +1,4 @@
-package com.fertavora.testing.responses;
+package com.fertavora.testing.clients.swapi.responses;
 
 import java.util.List;
 

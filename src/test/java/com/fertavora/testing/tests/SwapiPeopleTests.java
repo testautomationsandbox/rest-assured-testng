@@ -1,8 +1,8 @@
 package com.fertavora.testing.tests;
 
-import com.fertavora.testing.clients.PeopleEndpoint;
-import com.fertavora.testing.constants.PeopleResponseErrors;
-import com.fertavora.testing.responses.PeopleResponse;
+import com.fertavora.testing.clients.swapi.endpoints.PeopleEndpoint;
+import com.fertavora.testing.clients.swapi.constants.PeopleResponseErrors;
+import com.fertavora.testing.clients.swapi.responses.PeopleResponse;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
