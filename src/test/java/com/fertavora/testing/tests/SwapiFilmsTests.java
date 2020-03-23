@@ -1,6 +1,6 @@
 package com.fertavora.testing.tests;
 
-import com.fertavora.testing.clients.FilmsEndpoint;
+import com.fertavora.testing.clients.swapi.endpoints.FilmsEndpoint;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.Assert;

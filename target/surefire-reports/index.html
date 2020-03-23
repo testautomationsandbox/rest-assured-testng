@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,8 +37,8 @@
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" panel-name="suite-Surefire_suite" class="navigator-link">
-              <span class="suite-name border-passed">Surefire suite</span>
+            <a href="#" panel-name="suite-Hooks_Tests" class="navigator-link">
+              <span class="suite-name border-failed">Hooks Tests</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,37 +48,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" panel-name="test-xml-Surefire_suite" class="navigator-link ">
-                    <span>[unset file name]</span>
+                  <a href="#" panel-name="test-xml-Hooks_Tests" class="navigator-link ">
+                    <span>C:\Users\ferta\IdeaProjects\rest-assured-testng\src\test\resources\hooks.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="testlist-Surefire_suite" class="navigator-link ">
+                  <a href="#" panel-name="testlist-Hooks_Tests" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="group-Surefire_suite" class="navigator-link ">
+                  <a href="#" panel-name="group-Hooks_Tests" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="times-Surefire_suite" class="navigator-link ">
+                  <a href="#" panel-name="times-Hooks_Tests" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="reporter-Surefire_suite" class="navigator-link ">
+                  <a href="#" panel-name="reporter-Hooks_Tests" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="ignored-methods-Surefire_suite" class="navigator-link ">
+                  <a href="#" panel-name="ignored-methods-Hooks_Tests" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="chronological-Surefire_suite" class="navigator-link ">
+                  <a href="#" panel-name="chronological-Hooks_Tests" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -91,46 +91,35 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,   6 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Hooks_Tests" class="hide-methods failed suite-Hooks_Tests"> (hide)</a> <!-- hide-methods failed suite-Hooks_Tests -->
+                      <a href="#" panel-name="suite-Hooks_Tests" class="show-methods failed suite-Hooks_Tests"> (show)</a> <!-- show-methods failed suite-Hooks_Tests -->
+                    </span>
+                    <div class="method-list-content failed suite-Hooks_Tests">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Hooks_Tests" title="com.fertavora.testing.tests.TestngHook" class="method navigator-link" hash-for-method="failTest">failTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Hooks_Tests -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
                     <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods passed suite-Surefire_suite"> (hide)</a> <!-- hide-methods passed suite-Surefire_suite -->
-                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods passed suite-Surefire_suite"> (show)</a> <!-- show-methods passed suite-Surefire_suite -->
+                      <a href="#" panel-name="suite-Hooks_Tests" class="hide-methods passed suite-Hooks_Tests"> (hide)</a> <!-- hide-methods passed suite-Hooks_Tests -->
+                      <a href="#" panel-name="suite-Hooks_Tests" class="show-methods passed suite-Hooks_Tests"> (show)</a> <!-- show-methods passed suite-Hooks_Tests -->
                     </span>
-                    <div class="method-list-content passed suite-Surefire_suite">
+                    <div class="method-list-content passed suite-Hooks_Tests">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="com.fertavora.testing.tests.SwapiFilmsTests" class="method navigator-link" hash-for-method="checkContentType">checkContentType</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Hooks_Tests" title="com.fertavora.testing.tests.TestngHook" class="method navigator-link" hash-for-method="dummyTest">dummyTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="com.fertavora.testing.tests.SwapiFilmsTests" class="method navigator-link" hash-for-method="checkResponseTime">checkResponseTime</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="com.fertavora.testing.tests.SwapiFilmsTests" class="method navigator-link" hash-for-method="checkStatusCode">checkStatusCode</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="com.fertavora.testing.tests.SwapiPeopleTests" class="method navigator-link" hash-for-method="requestPeopleById_checkResponseTimeAndValues(2, C-3PO, n/a)">requestPeopleById_checkResponseTimeAndValues(2, C-3PO, n/a)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="com.fertavora.testing.tests.SwapiPeopleTests" class="method navigator-link" hash-for-method="requestPeopleById_checkResponseTimeAndValues(3, R2-D2, n/a)">requestPeopleById_checkResponseTimeAndValues(3, R2-D2, n/a)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="com.fertavora.testing.tests.SwapiPeopleTests" class="method navigator-link" hash-for-method="requestPeopleById_checkResponseTimeAndValues(1, Luke Skywalker, male)">requestPeopleById_checkResponseTimeAndValues(1, Luke Skywalker, male)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-Surefire_suite -->
+                    </div> <!-- method-list-content passed suite-Hooks_Tests -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -141,208 +130,183 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
-        <div panel-name="suite-Surefire_suite" class="panel Surefire_suite">
-          <div class="suite-Surefire_suite-class-passed">
+        <div panel-name="suite-Hooks_Tests" class="panel Hooks_Tests">
+          <div class="suite-Hooks_Tests-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.fertavora.testing.tests.SwapiFilmsTests</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.fertavora.testing.tests.TestngHook</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="checkContentType">
-                  </a> <!-- checkContentType -->
-                  <span class="method-name">checkContentType</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="checkResponseTime">
-                  </a> <!-- checkResponseTime -->
-                  <span class="method-name">checkResponseTime</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="checkStatusCode">
-                  </a> <!-- checkStatusCode -->
-                  <span class="method-name">checkStatusCode</span>
+                  <a name="failTest">
+                  </a> <!-- failTest -->
+                  <span class="method-name">failTest</span>
+                  <div class="stack-trace">java.lang.AssertionError: I am the test that MUST fail. expected [true] but found [false]
+	at com.fertavora.testing.tests.TestngHook.failTest(TestngHook.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(This test case must fail.)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Surefire_suite-class-passed -->
-          <div class="suite-Surefire_suite-class-passed">
+          </div> <!-- suite-Hooks_Tests-class-failed -->
+          <div class="suite-Hooks_Tests-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.fertavora.testing.tests.SwapiPeopleTests</span>
+              <span class="class-name">com.fertavora.testing.tests.TestngHook</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="requestPeopleById_checkResponseTimeAndValues(2, C-3PO, n/a)">
-                  </a> <!-- requestPeopleById_checkResponseTimeAndValues(2, C-3PO, n/a) -->
-                  <span class="method-name">requestPeopleById_checkResponseTimeAndValues</span>
-                  <span class="parameters">(2, C-3PO, n/a)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="requestPeopleById_checkResponseTimeAndValues(3, R2-D2, n/a)">
-                  </a> <!-- requestPeopleById_checkResponseTimeAndValues(3, R2-D2, n/a) -->
-                  <span class="method-name">requestPeopleById_checkResponseTimeAndValues</span>
-                  <span class="parameters">(3, R2-D2, n/a)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="requestPeopleById_checkResponseTimeAndValues(1, Luke Skywalker, male)">
-                  </a> <!-- requestPeopleById_checkResponseTimeAndValues(1, Luke Skywalker, male) -->
-                  <span class="method-name">requestPeopleById_checkResponseTimeAndValues</span>
-                  <span class="parameters">(1, Luke Skywalker, male)</span>
+                  <a name="dummyTest">
+                  </a> <!-- dummyTest -->
+                  <span class="method-name">dummyTest</span>
+                  <em>
+(This test case must pass.)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Surefire_suite-class-passed -->
-        </div> <!-- panel Surefire_suite -->
-        <div panel-name="test-xml-Surefire_suite" class="panel">
+          </div> <!-- suite-Hooks_Tests-class-passed -->
+        </div> <!-- panel Hooks_Tests -->
+        <div panel-name="test-xml-Hooks_Tests" class="panel">
           <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\ferta\IdeaProjects\rest-assured-testng\src\test\resources\hooks.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;1&quot; name=&quot;Surefire suite&quot; verbose=&quot;0&quot;&gt;
-  &lt;test thread-count=&quot;1&quot; name=&quot;Surefire test&quot; verbose=&quot;0&quot;&gt;
+&lt;suite name=&quot;Hooks Tests&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;org.testng.reporters.XMLReporter&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Test suite&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.fertavora.testing.tests.ServiceTests&quot;/&gt;
-      &lt;class name=&quot;com.fertavora.testing.tests.SwapiFilmsTests&quot;/&gt;
-      &lt;class name=&quot;com.fertavora.testing.tests.SwapiPeopleTests&quot;/&gt;
+      &lt;class name=&quot;com.fertavora.testing.tests.TestngHook&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Surefire test --&gt;
-&lt;/suite&gt; &lt;!-- Surefire suite --&gt;
+  &lt;/test&gt; &lt;!-- Test suite --&gt;
+&lt;/suite&gt; &lt;!-- Hooks Tests --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="testlist-Surefire_suite" class="panel">
+        <div panel-name="testlist-Hooks_Tests" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Tests for Surefire suite</span>
+            <span class="header-content">Tests for Hooks Tests</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Surefire test (3 classes)</span>
+                <span class="test-name">Test suite (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="group-Surefire_suite" class="panel">
+        <div panel-name="group-Hooks_Tests" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Groups for Surefire suite</span>
+            <span class="header-content">Groups for Hooks Tests</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="times-Surefire_suite" class="panel">
+        <div panel-name="times-Hooks_Tests" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Times for Surefire suite</span>
+            <span class="header-content">Times for Hooks Tests</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="times-div">
               <script type="text/javascript">
-suiteTableInitFunctions.push('tableData_Surefire_suite');
-function tableData_Surefire_suite() {
+suiteTableInitFunctions.push('tableData_Hooks_Tests');
+function tableData_Hooks_Tests() {
 var data = new google.visualization.DataTable();
 data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'requestPeopleById_checkResponseTimeAndValues')
-data.setCell(0, 2, 'com.fertavora.testing.tests.SwapiPeopleTests')
-data.setCell(0, 3, 1384);
+data.setCell(0, 1, 'dummyTest')
+data.setCell(0, 2, 'com.fertavora.testing.tests.TestngHook')
+data.setCell(0, 3, 2);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'requestPeopleById_checkResponseTimeAndValues')
-data.setCell(1, 2, 'com.fertavora.testing.tests.SwapiPeopleTests')
-data.setCell(1, 3, 1176);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'requestPeopleById_checkResponseTimeAndValues')
-data.setCell(2, 2, 'com.fertavora.testing.tests.SwapiPeopleTests')
-data.setCell(2, 3, 924);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'checkContentType')
-data.setCell(3, 2, 'com.fertavora.testing.tests.SwapiFilmsTests')
-data.setCell(3, 3, 2);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'checkResponseTime')
-data.setCell(4, 2, 'com.fertavora.testing.tests.SwapiFilmsTests')
-data.setCell(4, 3, 0);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'checkStatusCode')
-data.setCell(5, 2, 'com.fertavora.testing.tests.SwapiFilmsTests')
-data.setCell(5, 3, 0);
-window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
+data.setCell(1, 1, 'failTest')
+data.setCell(1, 2, 'com.fertavora.testing.tests.TestngHook')
+data.setCell(1, 3, 0);
+window.suiteTableData['Hooks_Tests']= { tableData: data, tableDiv: 'times-div-Hooks_Tests'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
-              <div id="times-div-Surefire_suite">
-              </div> <!-- times-div-Surefire_suite -->
+              <span class="suite-total-time">Total running time: 2 ms</span>
+              <div id="times-div-Hooks_Tests">
+              </div> <!-- times-div-Hooks_Tests -->
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="reporter-Surefire_suite" class="panel">
+        <div panel-name="reporter-Hooks_Tests" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Reporter output for Surefire suite</span>
+            <span class="header-content">Reporter output for Hooks Tests</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="ignored-methods-Surefire_suite" class="panel">
+        <div panel-name="ignored-methods-Hooks_Tests" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="chronological-Surefire_suite" class="panel">
+        <div panel-name="chronological-Hooks_Tests" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.fertavora.testing.tests.SwapiFilmsTests</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">getRequest</span>
+              <div class="chronological-class-name">com.fertavora.testing.tests.TestngHook</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">beforeSuite</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">17 ms</span>
               </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">33 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">checkContentType</span>
-                <span class="method-start">2199 ms</span>
+                <span class="method-name">dummyTest</span>
+                <span class="method-start">34 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">38 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">39 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">checkResponseTime</span>
-                <span class="method-start">2203 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">failTest</span>
+                <span class="method-start">39 ms</span>
               </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">checkStatusCode</span>
-                <span class="method-start">2203 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.fertavora.testing.tests.SwapiPeopleTests</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">requestPeopleById_checkResponseTimeAndValues(1, Luke Skywalker, male)</span>
-                <span class="method-start">2208 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">requestPeopleById_checkResponseTimeAndValues(2, C-3PO, n/a)</span>
-                <span class="method-start">3593 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">requestPeopleById_checkResponseTimeAndValues(3, R2-D2, n/a)</span>
-                <span class="method-start">4769 ms</span>
-              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">44 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">44 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-suite after">
+                <span class="method-name">afterSuite</span>
+                <span class="method-start">69 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

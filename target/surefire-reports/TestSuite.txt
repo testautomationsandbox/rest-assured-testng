@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.808 s - in TestSuite
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.569 s <<< FAILURE! - in TestSuite
+failTest(com.fertavora.testing.tests.TestngHook)  Time elapsed: 0.005 s  <<< FAILURE!
+java.lang.AssertionError: I am the test that MUST fail. expected [true] but found [false]
+	at com.fertavora.testing.tests.TestngHook.failTest(TestngHook.java:45)
+

@@ -1,4 +1,4 @@
-package com.fertavora.testing.clients;
+package com.fertavora.testing.clients.swapi.endpoints;
 
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -7,7 +7,7 @@ import static io.restassured.RestAssured.given;
 
 public class FilmsEndpoint extends SwapiService {
     private static RequestSpecification filmsRequest = given()
-            .spec(createRequestSpecification("/films"))
+            .spec(createRequestSpecification("/films", swapiServiceSpec))
             .when();
 
     public static Response getFilmById(int id) {
