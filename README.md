@@ -19,3 +19,15 @@ To run specific test classes or methods, generate a [TestNG XML File](https://te
 ``` 
 
 And then run `mvn clean package -DsuiteXmlFile=your/testngxml/path/file.xml`
+
+## Services under test
+* [The Star Wars API](https://swapi.co/)
+* [World time API](http://worldtimeapi.org/)
+
+## High Level Structure
+
+### Module `main`
+This module includes the services clients, endpoint and responses definitions.
+
+### Module `test`
+This module includes the test classes and resources (TestNG Suite XML files)

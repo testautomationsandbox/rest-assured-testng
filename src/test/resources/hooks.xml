@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Hooks Tests" verbose="1">
-    <test name="Test suite" >
-        <classes>
-            <class name="com.fertavora.testing.tests.TestngHook" />
-        </classes>
-    </test>
-</suite>
