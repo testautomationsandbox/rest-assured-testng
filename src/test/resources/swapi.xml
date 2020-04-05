@@ -5,8 +5,8 @@
 <suite name="RESTAssured Tests" verbose="1">
     <test name="SWAPI" >
         <classes>
-            <class name="com.fertavora.testing.tests.SwapiPeopleTests" />
-            <class name="com.fertavora.testing.tests.SwapiFilmsTests" />
+            <class name="tech.fertavora.apitesting.tests.swapi.SwapiPeopleTests" />
+            <class name="tech.fertavora.apitesting.tests.worldtimeapi.SwapiFilmsTests" />
         </classes>
     </test>
 </suite>

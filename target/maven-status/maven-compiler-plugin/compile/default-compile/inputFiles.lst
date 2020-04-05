@@ -1,5 +1,9 @@
-C:\Users\ferta\IdeaProjects\rest-assured-testng\src\main\java\com\fertavora\testing\responses\PeopleResponse.java
-C:\Users\ferta\IdeaProjects\rest-assured-testng\src\main\java\com\fertavora\testing\clients\SwapiService.java
-C:\Users\ferta\IdeaProjects\rest-assured-testng\src\main\java\com\fertavora\testing\constants\PeopleResponseErrors.java
-C:\Users\ferta\IdeaProjects\rest-assured-testng\src\main\java\com\fertavora\testing\clients\PeopleEndpoint.java
-C:\Users\ferta\IdeaProjects\rest-assured-testng\src\main\java\com\fertavora\testing\clients\FilmsEndpoint.java
+C:\Users\ferta\workspace\rest-assured-testng\src\main\java\tech\fertavora\apitesting\clients\swapi\endpoints\SwapiService.java
+C:\Users\ferta\workspace\rest-assured-testng\src\main\java\tech\fertavora\apitesting\clients\swapi\constants\PeopleResponseErrors.java
+C:\Users\ferta\workspace\rest-assured-testng\src\main\java\tech\fertavora\apitesting\clients\worldtimeapi\responses\Timezone.java
+C:\Users\ferta\workspace\rest-assured-testng\src\main\java\tech\fertavora\apitesting\clients\swapi\endpoints\PeopleEndpoint.java
+C:\Users\ferta\workspace\rest-assured-testng\src\main\java\tech\fertavora\apitesting\clients\swapi\endpoints\FilmsEndpoint.java
+C:\Users\ferta\workspace\rest-assured-testng\src\main\java\tech\fertavora\apitesting\clients\BaseService.java
+C:\Users\ferta\workspace\rest-assured-testng\src\main\java\tech\fertavora\apitesting\clients\swapi\responses\PeopleResponse.java
+C:\Users\ferta\workspace\rest-assured-testng\src\main\java\tech\fertavora\apitesting\clients\worldtimeapi\endpoints\TimezoneEndpoint.java
+C:\Users\ferta\workspace\rest-assured-testng\src\main\java\tech\fertavora\apitesting\clients\worldtimeapi\endpoints\WorldTimeAPI.java

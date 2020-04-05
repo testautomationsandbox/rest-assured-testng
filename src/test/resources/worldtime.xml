@@ -2,7 +2,7 @@
 <suite name="Hooks Tests" verbose="1">
     <test name="Test suite" >
         <classes>
-            <class name="com.fertavora.testing.tests.worldtime.WorldTimeTests" />
+            <class name="tech.fertavora.apitesting.tests.worldtimeapi.WorldTimeTests" />
         </classes>
     </test>
 </suite>
