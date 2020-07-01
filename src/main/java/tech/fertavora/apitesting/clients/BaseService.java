@@ -5,11 +5,16 @@ import io.restassured.specification.RequestSpecification;
 
 public class BaseService {
 
-    protected static RequestSpecification requestSpec;
-    protected static RequestSpecification createRequestSpecification(String basePath, RequestSpecBuilder defaultSpec) {
-        return defaultSpec.
-                setBasePath(basePath).
-                build();
+    protected static RequestSpecification setBaseUrlSpec(String baseUrl) {
+        return new RequestSpecBuilder()
+                .setBaseUri(baseUrl)
+                .build();
     }
 
+    protected static RequestSpecification setEndpoint(String basePath, RequestSpecification baseUrlReqSpec) {
+        return new RequestSpecBuilder()
+                .addRequestSpecification(baseUrlReqSpec)
+                .setBasePath(basePath)
+                .build();
+    }
 }

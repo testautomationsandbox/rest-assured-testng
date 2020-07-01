@@ -1,21 +1,26 @@
 package tech.fertavora.apitesting.clients.swapi.endpoints;
 
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-import tech.fertavora.apitesting.clients.BaseService;
+import io.restassured.response.ValidatableResponse;
+import tech.fertavora.apitesting.clients.swapi.SwapiService;
 
 import static io.restassured.RestAssured.given;
 
 public class FilmsEndpoint extends SwapiService {
-    private static RequestSpecification filmsRequest = given()
-            .spec(BaseService.createRequestSpecification("/films", swapiServiceSpec))
-            .when();
 
-    public static Response getFilmById(int id) {
-        return filmsRequest.get("/" + id);
+    public static ValidatableResponse getFilmById(int filmId) {
+        return given()
+                .spec(filmsEndpoint)
+                .pathParam("filmId", filmId)
+                .when()
+                .get("/{filmId}")
+                .then();
     }
 
-    public static Response getFilms() {
-        return filmsRequest.get("/");
+    public static ValidatableResponse getFilms() {
+        return given()
+                .spec(filmsEndpoint)
+                .when()
+                .get()
+                .then();
     }
 }
