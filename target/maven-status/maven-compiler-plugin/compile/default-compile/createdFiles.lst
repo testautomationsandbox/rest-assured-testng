@@ -1,0 +1,9 @@
+tech\fertavora\apitesting\clients\worldtimeapi\endpoints\TimezoneEndpoint.class
+tech\fertavora\apitesting\clients\swapi\endpoints\PeopleEndpoint.class
+tech\fertavora\apitesting\clients\swapi\endpoints\SwapiService.class
+tech\fertavora\apitesting\clients\worldtimeapi\responses\Timezone.class
+tech\fertavora\apitesting\clients\swapi\responses\PeopleResponse.class
+tech\fertavora\apitesting\clients\BaseService.class
+tech\fertavora\apitesting\clients\worldtimeapi\endpoints\WorldTimeAPI.class
+tech\fertavora\apitesting\clients\swapi\constants\PeopleResponseErrors.class
+tech\fertavora\apitesting\clients\swapi\endpoints\FilmsEndpoint.class

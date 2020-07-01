@@ -1,6 +1,7 @@
-package com.fertavora.testing.tests;
+package tech.fertavora.apitesting.tests.swapi;
 
-import com.fertavora.testing.clients.FilmsEndpoint;
+import tech.fertavora.apitesting.tests.BasicChecks;
+import tech.fertavora.apitesting.clients.swapi.endpoints.FilmsEndpoint;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;

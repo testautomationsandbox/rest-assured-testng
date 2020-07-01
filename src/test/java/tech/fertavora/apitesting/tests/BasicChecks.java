@@ -1,7 +1,4 @@
-package com.fertavora.testing.tests;
-
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+package tech.fertavora.apitesting.tests;
 
 public interface BasicChecks {
     void getRequest();
