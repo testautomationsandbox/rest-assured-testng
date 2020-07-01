@@ -1,22 +1,25 @@
 package com.fertavora.testing.clients;
 
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-
+import io.restassured.response.ValidatableResponse;
 import static io.restassured.RestAssured.given;
 
 public class PeopleEndpoint extends SwapiService {
 
-    private static RequestSpecification peopleRequest = given()
-            .spec(createRequestSpecification("/people"))
-            .when();
-
-    public static Response getPeopleById(int id) {
-        return peopleRequest.get("/" + id);
+    public static ValidatableResponse getPeopleById(int peopleId) {
+        return given()
+                .spec(peopleEndpoint)
+                .pathParam("peopleId", peopleId)
+                .when()
+                .get("/{peopleId}")
+                .then();
     }
 
-    public static Response getPeople() {
-        return peopleRequest.get("/");
+    public static ValidatableResponse getPeople() {
+        return given()
+                .spec(peopleEndpoint)
+                .when()
+                .get()
+                .then();
     }
 
 }
