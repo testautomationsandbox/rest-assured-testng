@@ -1,7 +1,9 @@
 package tech.fertavora.apitesting.clients.worldtimeapi.endpoints;
 
 import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
+import tech.fertavora.apitesting.clients.worldtimeapi.WorldTimeAPI;
 
 import static io.restassured.RestAssured.given;
 
@@ -10,16 +12,16 @@ import static io.restassured.RestAssured.given;
  */
 public class TimezoneEndpoint extends WorldTimeAPI {
 
-    private static RequestSpecification timezoneRequest = given()
-            .spec(createRequestSpecification("/timezone", worldTimeApiSpec))
-            .when();
-
     /**
      * Performs a GET request to /timezone
      * @return The request response
      */
-    public static Response getTimezones(){
-        return timezoneRequest.get();
+    public static ValidatableResponse getTimezones(){
+        return given()
+                .spec(timezoneEndpoint)
+                .when()
+                .get()
+                .then();
     }
 
     /**
@@ -27,7 +29,12 @@ public class TimezoneEndpoint extends WorldTimeAPI {
      * @param timezoneName The timezone name to be requested
      * @return The timezone response JSON object
      */
-    public static Response getTimezone(String timezoneName) {
-        return timezoneRequest.get(timezoneName);
+    public static ValidatableResponse getTimezone(String timezoneName) {
+        return given()
+                .spec(timezoneEndpoint)
+                .pathParam("timezoneName", timezoneName)
+                .when()
+                .get("/{timezoneName}")
+                .then();
     }
 }

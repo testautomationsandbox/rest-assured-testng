@@ -1,12 +1,13 @@
-package com.fertavora.testing.tests;
+package tech.fertavora.apitesting.tests.swapi;
 
-import com.fertavora.testing.clients.PeopleEndpoint;
-import com.fertavora.testing.constants.PeopleResponseErrors;
-import com.fertavora.testing.responses.PeopleResponse;
 import io.restassured.response.ValidatableResponse;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import tech.fertavora.apitesting.clients.swapi.constants.PeopleResponseErrors;
+import tech.fertavora.apitesting.clients.swapi.endpoints.PeopleEndpoint;
+import tech.fertavora.apitesting.clients.swapi.responses.PeopleResponse;
+import tech.fertavora.apitesting.tests.ServiceTests;
 
 public class SwapiPeopleTests extends ServiceTests {
 
