@@ -1,9 +1,14 @@
 package tech.fertavora.apitesting.clients;
 
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
+import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
+
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
@@ -51,5 +56,31 @@ public class BaseService {
                 .when()
                 .get()
                 .then();
+    }
+
+    /**
+     * A GET request with path params, no body, no headers.
+     *
+     * @param paramsMap The path params to be passed
+     * @param requestSpec The req spec to be sent the GET
+     * @param pathFormat The path format with params reference. e.g. "/clients/{clientId}/addresses/{addressId}"
+     * @return
+     */
+    protected static ValidatableResponse getRequestWithParamsNoHeadersNoBody(Map<String, ?> paramsMap, RequestSpecification requestSpec, String pathFormat) {
+        return given()
+                .spec(requestSpec)
+                .pathParams(paramsMap)
+                .when()
+                .get(pathFormat)
+                .then();
+    }
+
+    public static ResponseSpecification getRespSpec(int expectedStatusCode, ContentType expectedContentType) {
+        return new ResponseSpecBuilder()
+                .log(LogDetail.STATUS)
+                .log(LogDetail.BODY)
+                .expectStatusCode(expectedStatusCode)
+                .expectContentType(expectedContentType)
+                .build();
     }
 }

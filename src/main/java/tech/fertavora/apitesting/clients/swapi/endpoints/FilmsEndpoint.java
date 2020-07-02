@@ -4,6 +4,9 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import tech.fertavora.apitesting.clients.swapi.SwapiService;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 
 public class FilmsEndpoint extends SwapiService {
@@ -15,13 +18,12 @@ public class FilmsEndpoint extends SwapiService {
      * @param filmId The id of the film to find
      * @return ValidatableResponse Response to be validated
      */
-    public static ValidatableResponse getFilmById(int filmId) {
-        return given()
-                .spec(filmsEndpoint)
-                .pathParam("filmId", filmId)
-                .when()
-                .get("/{filmId}")
-                .then();
+    public static ValidatableResponse getFilmById(Integer filmId) {
+        Map<String, Integer> pathParamsMap = new HashMap<>();
+        pathParamsMap.put("filmId", filmId);
+
+        String pathFormat = "/{filmId}";
+        return getRequestWithParamsNoHeadersNoBody(pathParamsMap, filmsEndpoint, pathFormat);
     }
 
     /**

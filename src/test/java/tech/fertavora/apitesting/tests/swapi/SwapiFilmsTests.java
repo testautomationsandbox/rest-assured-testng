@@ -1,15 +1,13 @@
 package tech.fertavora.apitesting.tests.swapi;
 
-import tech.fertavora.apitesting.tests.BasicChecks;
 import tech.fertavora.apitesting.clients.swapi.endpoints.FilmsEndpoint;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class SwapiFilmsTests implements BasicChecks {
+public class SwapiFilmsTests {
     private ValidatableResponse response;
 
     @BeforeClass
@@ -32,6 +30,12 @@ public class SwapiFilmsTests implements BasicChecks {
         Long expectedTime = 5000L;
         Long responseTime = response.extract().time();
         Assert.assertTrue(responseTime <= expectedTime, "Response time threshold\nExpected: " + expectedTime + "\nActual: " + responseTime + "\n");
+    }
+
+    @Test
+    public void getFilmById(){
+        ValidatableResponse responseById = FilmsEndpoint.getFilmById(3).spec(FilmsEndpoint.getRespSpec(200, ContentType.JSON));
+        Assert.assertEquals(responseById.extract().statusCode(), 200, "The response status code is wrong!");
     }
 }
 

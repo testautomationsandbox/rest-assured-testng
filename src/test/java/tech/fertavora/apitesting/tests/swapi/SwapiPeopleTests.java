@@ -1,5 +1,6 @@
 package tech.fertavora.apitesting.tests.swapi;
 
+import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -7,9 +8,8 @@ import org.testng.annotations.Test;
 import tech.fertavora.apitesting.clients.swapi.constants.PeopleResponseErrors;
 import tech.fertavora.apitesting.clients.swapi.endpoints.PeopleEndpoint;
 import tech.fertavora.apitesting.clients.swapi.dtos.PeopleDTO;
-import tech.fertavora.apitesting.tests.ServiceTests;
 
-public class SwapiPeopleTests extends ServiceTests {
+public class SwapiPeopleTests {
 
     @DataProvider(name = "PeopleDataProvider")
     public Object[][] peopleData() {
@@ -22,7 +22,7 @@ public class SwapiPeopleTests extends ServiceTests {
 
     @Test(dataProvider = "PeopleDataProvider")
     public void requestPeopleById_checkResponseTimeAndValues(int id, String name, String gender) {
-        ValidatableResponse response = PeopleEndpoint.getPeopleById(id).spec(responseSpecValid);
+        ValidatableResponse response = PeopleEndpoint.getPeopleById(id).spec(PeopleEndpoint.getRespSpec(200, ContentType.JSON));
         PeopleDTO peopleDTO = response.extract().as(PeopleDTO.class);
         Assert.assertEquals(peopleDTO.getName(), name, PeopleResponseErrors.NAME_IS_NOT_CORRECT);
         Assert.assertEquals(peopleDTO.getGender(), gender, PeopleResponseErrors.GENDER_IS_NOT_CORRECT);
