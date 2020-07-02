@@ -16,6 +16,7 @@
         <jacksonAnnotationsVersion>2.10.3</jacksonAnnotationsVersion>
         <jacksonDastabindVersion>2.10.3</jacksonDastabindVersion>
         <mavenSurefireVersion>2.22.2</mavenSurefireVersion>
+        <lombokVersion>1.18.0</lombokVersion>
     </properties>
 
     <dependencies>
@@ -39,6 +40,11 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jacksonDastabindVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombokVersion}</version>
         </dependency>
     </dependencies>
 

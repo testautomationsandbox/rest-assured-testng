@@ -10,6 +10,11 @@ public class FilmsEndpoint extends SwapiService {
 
     protected static RequestSpecification filmsEndpoint = setEndpoint("/films", swapiServiceBaseSpec);
 
+    /**
+     * A Request to /films to find a film by Id as path param
+     * @param filmId The id of the film to find
+     * @return ValidatableResponse Response to be validated
+     */
     public static ValidatableResponse getFilmById(int filmId) {
         return given()
                 .spec(filmsEndpoint)
@@ -19,11 +24,11 @@ public class FilmsEndpoint extends SwapiService {
                 .then();
     }
 
+    /**
+     * A Request to /films that returns all the films
+     * @return ValidatableResponse Response to be validated
+     */
     public static ValidatableResponse getFilms() {
-        return given()
-                .spec(filmsEndpoint)
-                .when()
-                .get()
-                .then();
+        return getRequestNoHeadersNoParamsNoBody(filmsEndpoint);
     }
 }
