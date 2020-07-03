@@ -80,8 +80,6 @@ public class BaseService {
      * @return
      */
     public static String getFailedRequestErrorMessage(RequestSpecification reqSpec, String assertionErrorMessage, ValidatableResponse response) {
-        // todo custom error to be moved to method on service base class
-        // also reformat req spec to include params
         QueryableRequestSpecification queryRequest = SpecificationQuerier.query(PlanetsEndpoint.getCustomRequest());
         String requestBody = "Request had no body";
         if (queryRequest.getBody() != null) {

@@ -24,6 +24,10 @@ public class PlanetsEndpoint extends SwapiService {
         return getRequest(planetsEndpoint);
     }
 
+    /**
+     * A Request to /planets that returns a given planet based on Id
+     * @return ValidatableResponse Response to be validated
+     */
     public static ValidatableResponse getPlanetById(Integer planeId){
         Map<String, Integer> pathParamsMap = new HashMap<>();
         pathParamsMap.put("planetId", planeId);
@@ -35,6 +39,6 @@ public class PlanetsEndpoint extends SwapiService {
                 .setBasePath(queryRequest.getBasePath() + "/{planetId}")
                 .build();
 
-        return getRequest(customRequest); // todo if works, rename to simple get request
+        return getRequest(customRequest);
     }
 }

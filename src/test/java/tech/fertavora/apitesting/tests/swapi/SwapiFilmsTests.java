@@ -15,6 +15,7 @@ public class SwapiFilmsTests {
         response = FilmsEndpoint.getFilms();
     }
 
+    // todo add try catch for assertion custom
     @Test
     public void checkStatusCode() {
         Assert.assertEquals(response.extract().statusCode(), 200, "The response status code is wrong!");

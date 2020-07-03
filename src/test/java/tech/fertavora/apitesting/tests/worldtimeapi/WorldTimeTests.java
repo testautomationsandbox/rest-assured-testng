@@ -9,7 +9,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class WorldTimeTests {
-
+    // todo add try catch for assertion custom
     @DataProvider(name = "TimezonesDataProvider")
     public Object[][] timezonesDataSet() {
         return new Object[][] {

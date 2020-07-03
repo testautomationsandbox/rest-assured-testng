@@ -20,6 +20,7 @@ public class SwapiPeopleTests {
         };
     }
 
+    // todo add try catch for assertion custom
     @Test(dataProvider = "PeopleDataProvider")
     public void requestPeopleById_checkResponseValues(int id, String name, String gender) {
         ValidatableResponse response = PeopleEndpoint.getPeopleById(id)
