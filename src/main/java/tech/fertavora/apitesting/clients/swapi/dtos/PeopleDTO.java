@@ -6,7 +6,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class PeopleDTO {
+public class PeopleDTO extends BaseDTO{
     private String name;
     private String height;
     private String mass;
@@ -20,7 +20,4 @@ public class PeopleDTO {
     private List<String> species;
     private List<String> vehicles;
     private List<String> starships;
-    private String created;
-    private String edited;
-    private String url;
 }

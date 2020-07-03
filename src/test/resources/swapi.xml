@@ -5,8 +5,9 @@
 <suite name="SWAPI Tests" verbose="1">
     <test name="Functinonal Tests" >
         <classes>
-            <class name="tech.fertavora.apitesting.tests.swapi.SwapiPeopleTests" />
-            <class name="tech.fertavora.apitesting.tests.swapi.SwapiFilmsTests" />
+<!--            <class name="tech.fertavora.apitesting.tests.swapi.SwapiPeopleTests" />-->
+            <class name="tech.fertavora.apitesting.tests.swapi.SwapiPlanetsTests" />
+<!--            <class name="tech.fertavora.apitesting.tests.swapi.SwapiFilmsTests" />-->
         </classes>
     </test>
 </suite>

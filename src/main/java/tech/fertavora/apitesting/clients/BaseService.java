@@ -77,8 +77,7 @@ public class BaseService {
 
     public static ResponseSpecification getRespSpec(int expectedStatusCode, ContentType expectedContentType) {
         return new ResponseSpecBuilder()
-                .log(LogDetail.STATUS)
-                .log(LogDetail.BODY)
+                .log(LogDetail.ALL)
                 .expectStatusCode(expectedStatusCode)
                 .expectContentType(expectedContentType)
                 .build();

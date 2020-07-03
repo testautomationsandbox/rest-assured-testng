@@ -21,8 +21,9 @@ public class SwapiPeopleTests {
     }
 
     @Test(dataProvider = "PeopleDataProvider")
-    public void requestPeopleById_checkResponseTimeAndValues(int id, String name, String gender) {
-        ValidatableResponse response = PeopleEndpoint.getPeopleById(id).spec(PeopleEndpoint.getRespSpec(200, ContentType.JSON));
+    public void requestPeopleById_checkResponseValues(int id, String name, String gender) {
+        ValidatableResponse response = PeopleEndpoint.getPeopleById(id)
+                .spec(PeopleEndpoint.getRespSpec(200, ContentType.JSON));
         PeopleDTO peopleDTO = response.extract().as(PeopleDTO.class);
         Assert.assertEquals(peopleDTO.getName(), name, PeopleResponseErrors.NAME_IS_NOT_CORRECT);
         Assert.assertEquals(peopleDTO.getGender(), gender, PeopleResponseErrors.GENDER_IS_NOT_CORRECT);
