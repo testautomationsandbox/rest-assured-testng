@@ -5,14 +5,19 @@ import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
+import io.restassured.specification.QueryableRequestSpecification;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import io.restassured.specification.SpecificationQuerier;
+import tech.fertavora.apitesting.clients.swapi.endpoints.PlanetsEndpoint;
 
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
 public class BaseService {
+
+    protected static RequestSpecification customRequest;
 
     /**
      * The base request spec.
@@ -46,32 +51,15 @@ public class BaseService {
     }
 
     /**
-     * A GET request with no params, body nor headers
+     * A GET request
      * @param requestSpec The req spec to be send the request
      * @return ValidatableResponse The response to be validated
      */
-    protected static ValidatableResponse getRequestNoHeadersNoParamsNoBody(RequestSpecification requestSpec) {
+    protected static ValidatableResponse getRequest(RequestSpecification requestSpec) {
         return given()
                 .spec(requestSpec)
                 .when()
                 .get()
-                .then();
-    }
-
-    /**
-     * A GET request with path params, no body, no headers.
-     *
-     * @param paramsMap The path params to be passed
-     * @param requestSpec The req spec to be sent the GET
-     * @param pathFormat The path format with params reference. e.g. "/clients/{clientId}/addresses/{addressId}"
-     * @return
-     */
-    protected static ValidatableResponse getRequestWithParamsNoHeadersNoBody(Map<String, ?> paramsMap, RequestSpecification requestSpec, String pathFormat) {
-        return given()
-                .spec(requestSpec)
-                .pathParams(paramsMap)
-                .when()
-                .get(pathFormat)
                 .then();
     }
 
@@ -81,5 +69,35 @@ public class BaseService {
                 .expectStatusCode(expectedStatusCode)
                 .expectContentType(expectedContentType)
                 .build();
+    }
+
+    /**
+     * Generates a custom error message with the information of the request sent.
+     * Helps to get request details on stackTrace messages on reporting output.
+     * @param reqSpec The request specification that failed the request
+     * @param assertionErrorMessage The error message of the fail itself
+     * @param response The response of the failed request
+     * @return
+     */
+    public static String getFailedRequestErrorMessage(RequestSpecification reqSpec, String assertionErrorMessage, ValidatableResponse response) {
+        // todo custom error to be moved to method on service base class
+        // also reformat req spec to include params
+        QueryableRequestSpecification queryRequest = SpecificationQuerier.query(PlanetsEndpoint.getCustomRequest());
+        String requestBody = "Request had no body";
+        if (queryRequest.getBody() != null) {
+            requestBody = queryRequest.getBody().toString();
+        }
+
+        String errorMessage = assertionErrorMessage +
+                "\nGET " + queryRequest.getBaseUri() + queryRequest.getBasePath() +
+                "\nPath Params: " + queryRequest.getPathParams().toString() +
+                "\nForm Params: " + queryRequest.getFormParams().toString() +
+                "\nQuery Params: " + queryRequest.getQueryParams().toString() +
+                "\nRequest Headers:\n" + queryRequest.getHeaders().toString() +
+                "\nRequest Body: " + requestBody +
+                "\n\nResponse Headers:\n" + response.extract().response().getHeaders().toString() +
+                "\n\nResponse Body:\n" + response.extract().response().prettyPrint();
+
+        return errorMessage;
     }
 }

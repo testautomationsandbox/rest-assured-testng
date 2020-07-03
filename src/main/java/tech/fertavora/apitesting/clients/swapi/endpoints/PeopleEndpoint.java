@@ -29,7 +29,7 @@ public class PeopleEndpoint extends SwapiService {
      * @return ValidatableResponse Response to be validated
      */
     public static ValidatableResponse getPeople() {
-        return getRequestNoHeadersNoParamsNoBody(peopleEndpoint);
+        return getRequest(peopleEndpoint);
     }
 
 }

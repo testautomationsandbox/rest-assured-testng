@@ -1,7 +1,10 @@
 package tech.fertavora.apitesting.clients.swapi.endpoints;
 
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.response.ValidatableResponse;
+import io.restassured.specification.QueryableRequestSpecification;
 import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.SpecificationQuerier;
 import tech.fertavora.apitesting.clients.swapi.SwapiService;
 
 import java.util.HashMap;
@@ -22,8 +25,13 @@ public class FilmsEndpoint extends SwapiService {
         Map<String, Integer> pathParamsMap = new HashMap<>();
         pathParamsMap.put("filmId", filmId);
 
-        String pathFormat = "/{filmId}";
-        return getRequestWithParamsNoHeadersNoBody(pathParamsMap, filmsEndpoint, pathFormat);
+        QueryableRequestSpecification queryRequest = SpecificationQuerier.query(filmsEndpoint);
+        customRequest = new RequestSpecBuilder()
+                .addRequestSpecification(filmsEndpoint)
+                .addPathParams(pathParamsMap)
+                .setBasePath(queryRequest.getBasePath() + "/{filmId}")
+                .build();
+        return getRequest(customRequest);
     }
 
     /**
@@ -31,6 +39,6 @@ public class FilmsEndpoint extends SwapiService {
      * @return ValidatableResponse Response to be validated
      */
     public static ValidatableResponse getFilms() {
-        return getRequestNoHeadersNoParamsNoBody(filmsEndpoint);
+        return getRequest(filmsEndpoint);
     }
 }

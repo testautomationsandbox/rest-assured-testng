@@ -13,6 +13,6 @@ public class VehiclesEndpoint extends SwapiService {
      * @return ValidatableResponse Response to be validated
      */
     public static ValidatableResponse getSpecies() {
-        return getRequestNoHeadersNoParamsNoBody(vehiclesEndpoint);
+        return getRequest(vehiclesEndpoint);
     }
 }
