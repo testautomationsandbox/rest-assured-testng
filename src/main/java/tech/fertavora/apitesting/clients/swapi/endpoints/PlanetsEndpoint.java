@@ -37,10 +37,4 @@ public class PlanetsEndpoint extends SwapiService {
 
         return getRequest(customRequest); // todo if works, rename to simple get request
     }
-
-    //todo move to interface?
-    public static RequestSpecification getCustomRequest() {
-        return customRequest;
-    }
-
 }

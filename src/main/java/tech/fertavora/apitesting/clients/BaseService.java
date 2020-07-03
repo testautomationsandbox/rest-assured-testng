@@ -100,4 +100,13 @@ public class BaseService {
 
         return errorMessage;
     }
+
+    /**
+     * Returns the request specification set as current.
+     * Helpful for reporting output
+     * @return The request specification set as custom request.
+     */
+    public static RequestSpecification getCustomRequest() {
+        return customRequest;
+    }
 }
