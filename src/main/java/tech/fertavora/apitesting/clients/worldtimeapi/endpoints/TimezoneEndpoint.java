@@ -12,6 +12,8 @@ import static io.restassured.RestAssured.given;
  */
 public class TimezoneEndpoint extends WorldTimeAPI {
 
+    protected static RequestSpecification timezoneEndpoint = setEndpoint("/timezone", worldtimeServiceBaseSpec);
+
     /**
      * Performs a GET request to /timezone
      * @return The request response

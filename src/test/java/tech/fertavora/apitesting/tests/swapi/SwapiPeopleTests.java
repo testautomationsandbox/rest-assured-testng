@@ -1,15 +1,15 @@
 package tech.fertavora.apitesting.tests.swapi;
 
+import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import tech.fertavora.apitesting.clients.swapi.constants.PeopleResponseErrors;
 import tech.fertavora.apitesting.clients.swapi.endpoints.PeopleEndpoint;
-import tech.fertavora.apitesting.clients.swapi.responses.PeopleResponse;
-import tech.fertavora.apitesting.tests.ServiceTests;
+import tech.fertavora.apitesting.clients.swapi.dtos.PeopleDTO;
 
-public class SwapiPeopleTests extends ServiceTests {
+public class SwapiPeopleTests {
 
     @DataProvider(name = "PeopleDataProvider")
     public Object[][] peopleData() {
@@ -20,12 +20,14 @@ public class SwapiPeopleTests extends ServiceTests {
         };
     }
 
+    // todo add try catch for assertion custom
     @Test(dataProvider = "PeopleDataProvider")
-    public void requestPeopleById_checkResponseTimeAndValues(int id, String name, String gender) {
-        ValidatableResponse response = PeopleEndpoint.getPeopleById(id).spec(responseSpecValid);
-        PeopleResponse peopleResponse = response.extract().as(PeopleResponse.class);
-        Assert.assertEquals(peopleResponse.getName(), name, PeopleResponseErrors.NAME_IS_NOT_CORRECT);
-        Assert.assertEquals(peopleResponse.getGender(), gender, PeopleResponseErrors.GENDER_IS_NOT_CORRECT);
+    public void requestPeopleById_checkResponseValues(int id, String name, String gender) {
+        ValidatableResponse response = PeopleEndpoint.getPeopleById(id)
+                .spec(PeopleEndpoint.getRespSpec(200, ContentType.JSON));
+        PeopleDTO peopleDTO = response.extract().as(PeopleDTO.class);
+        Assert.assertEquals(peopleDTO.getName(), name, PeopleResponseErrors.NAME_IS_NOT_CORRECT);
+        Assert.assertEquals(peopleDTO.getGender(), gender, PeopleResponseErrors.GENDER_IS_NOT_CORRECT);
     }
 
 }

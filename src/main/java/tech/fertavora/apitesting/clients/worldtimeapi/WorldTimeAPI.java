@@ -9,6 +9,6 @@ import tech.fertavora.apitesting.clients.BaseService;
  */
 public class WorldTimeAPI extends BaseService {
 
-    protected static RequestSpecification worldtimeServiceBaseSpec = setBaseUrlSpec("https://worldtimeapi.org/api/");
-    protected static RequestSpecification timezoneEndpoint = setEndpoint("/timezone", worldtimeServiceBaseSpec);
+    protected static RequestSpecification worldtimeServiceBaseSpec = setBaseUrlSpec(System.getenv("WORLDTIME_BASE_URL"));
+
 }
