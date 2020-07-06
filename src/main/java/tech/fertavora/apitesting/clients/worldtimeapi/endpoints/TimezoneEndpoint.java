@@ -1,9 +1,15 @@
 package tech.fertavora.apitesting.clients.worldtimeapi.endpoints;
 
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
+import io.restassured.specification.QueryableRequestSpecification;
 import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.SpecificationQuerier;
 import tech.fertavora.apitesting.clients.worldtimeapi.WorldTimeAPI;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
@@ -19,11 +25,8 @@ public class TimezoneEndpoint extends WorldTimeAPI {
      * @return The request response
      */
     public static ValidatableResponse getTimezones(){
-        return given()
-                .spec(timezoneEndpoint)
-                .when()
-                .get()
-                .then();
+        customRequest = timezoneEndpoint;
+        return getRequest(timezoneEndpoint);
     }
 
     /**
@@ -31,12 +34,17 @@ public class TimezoneEndpoint extends WorldTimeAPI {
      * @param timezoneName The timezone name to be requested
      * @return The timezone response JSON object
      */
-    public static ValidatableResponse getTimezone(String timezoneName) {
-        return given()
-                .spec(timezoneEndpoint)
-                .pathParam("timezoneName", timezoneName)
-                .when()
-                .get("/{timezoneName}")
-                .then();
+    public static ValidatableResponse getTimezoneByName(String timezoneName) {
+        Map<String, String> pathParamsMap = new HashMap<>();
+        pathParamsMap.put("timezoneName", timezoneName);
+
+        QueryableRequestSpecification queryRequest = SpecificationQuerier.query(timezoneEndpoint);
+        customRequest = new RequestSpecBuilder()
+                .addRequestSpecification(timezoneEndpoint)
+                .addPathParams(pathParamsMap)
+                .setBasePath(queryRequest.getBasePath() + "/{timezoneName}")
+                .build();
+
+        return getRequest(customRequest);
     }
 }

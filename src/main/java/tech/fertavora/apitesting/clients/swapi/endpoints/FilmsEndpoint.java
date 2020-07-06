@@ -39,6 +39,7 @@ public class FilmsEndpoint extends SwapiService {
      * @return ValidatableResponse Response to be validated
      */
     public static ValidatableResponse getFilms() {
+        customRequest = filmsEndpoint;
         return getRequest(filmsEndpoint);
     }
 }

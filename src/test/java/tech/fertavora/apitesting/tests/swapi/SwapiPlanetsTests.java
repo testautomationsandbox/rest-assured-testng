@@ -19,12 +19,12 @@ public class SwapiPlanetsTests {
             Assert.assertEquals(planet.getName(), "Hoth");
         } catch(AssertionError assertionError) {
             throw new AssertionError(
-                    PlanetsEndpoint.getFailedRequestErrorMessage(
-                            PlanetsEndpoint.getCustomRequest(),
-                            assertionError.getMessage(),
-                            response
-                    ),
-                    assertionError);
+                PlanetsEndpoint.getFailedRequestErrorMessage(
+                    PlanetsEndpoint.getCustomRequest(),
+                    assertionError.getMessage(),
+                    response
+                ),
+                assertionError);
         }
     }
 
@@ -37,12 +37,12 @@ public class SwapiPlanetsTests {
             Assert.assertTrue(planetsList.getResults().size() > 0);
         }catch (AssertionError assertionError) {
             throw new AssertionError(
-                    PlanetsEndpoint.getFailedRequestErrorMessage(
-                            PlanetsEndpoint.getCustomRequest(),
-                            assertionError.getMessage(),
-                            response
-                    ),
-                    assertionError);
+                PlanetsEndpoint.getFailedRequestErrorMessage(
+                    PlanetsEndpoint.getCustomRequest(),
+                    assertionError.getMessage(),
+                    response
+                ),
+                assertionError);
         }
     }
 }
