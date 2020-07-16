@@ -37,7 +37,8 @@ public class PeopleEndpoint extends SwapiService {
      * @return ValidatableResponse Response to be validated
      */
     public static ValidatableResponse getPeople() {
-        return getRequest(peopleEndpoint);
+        customRequest = peopleEndpoint;
+        return getRequest(customRequest);
     }
 
 }
