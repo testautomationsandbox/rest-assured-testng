@@ -1,8 +1,8 @@
-package tech.fertavora.apitesting.clients.worldtimeapi.responses;
+package tech.fertavora.apitesting.clients.worldtimeapi.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Timezone {
+public class TimezoneDTO {
     private int weekNumber;
     private String utcOffset;
     private String utcDatetime; // would be Date

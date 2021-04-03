@@ -1,10 +1,14 @@
 package tech.fertavora.apitesting.clients.swapi.endpoints;
 
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.response.ValidatableResponse;
+import io.restassured.specification.QueryableRequestSpecification;
 import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.SpecificationQuerier;
 import tech.fertavora.apitesting.clients.swapi.SwapiService;
 
-import static io.restassured.RestAssured.given;
+import java.util.HashMap;
+import java.util.Map;
 
 public class PeopleEndpoint extends SwapiService {
 
@@ -16,12 +20,16 @@ public class PeopleEndpoint extends SwapiService {
      * @return ValidatableResponse Response to be validated
      */
     public static ValidatableResponse getPeopleById(int peopleId) {
-        return given()
-                .spec(peopleEndpoint)
-                .pathParam("peopleId", peopleId)
-                .when()
-                .get("/{peopleId}")
-                .then();
+        Map<String, Integer> pathParamsMap = new HashMap<>();
+        pathParamsMap.put("peopleId", peopleId);
+
+        QueryableRequestSpecification queryRequest = SpecificationQuerier.query(peopleEndpoint);
+        customRequest = new RequestSpecBuilder()
+            .addRequestSpecification(peopleEndpoint)
+            .addPathParams(pathParamsMap)
+            .setBasePath(queryRequest.getBasePath() + "/{peopleId}")
+            .build();
+        return getRequest(customRequest);
     }
 
     /**
@@ -29,7 +37,8 @@ public class PeopleEndpoint extends SwapiService {
      * @return ValidatableResponse Response to be validated
      */
     public static ValidatableResponse getPeople() {
-        return getRequest(peopleEndpoint);
+        customRequest = peopleEndpoint;
+        return getRequest(customRequest);
     }
 
 }

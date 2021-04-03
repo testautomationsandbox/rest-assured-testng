@@ -10,8 +10,6 @@ import tech.fertavora.apitesting.clients.swapi.SwapiService;
 import java.util.HashMap;
 import java.util.Map;
 
-import static io.restassured.RestAssured.given;
-
 public class FilmsEndpoint extends SwapiService {
 
     protected static RequestSpecification filmsEndpoint = setEndpoint("/films", swapiServiceBaseSpec);
@@ -39,6 +37,7 @@ public class FilmsEndpoint extends SwapiService {
      * @return ValidatableResponse Response to be validated
      */
     public static ValidatableResponse getFilms() {
-        return getRequest(filmsEndpoint);
+        customRequest = filmsEndpoint;
+        return getRequest(customRequest);
     }
 }

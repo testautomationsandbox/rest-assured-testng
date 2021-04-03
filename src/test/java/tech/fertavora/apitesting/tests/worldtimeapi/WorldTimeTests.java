@@ -3,13 +3,12 @@ package tech.fertavora.apitesting.tests.worldtimeapi;
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 import tech.fertavora.apitesting.clients.worldtimeapi.endpoints.TimezoneEndpoint;
-import tech.fertavora.apitesting.clients.worldtimeapi.responses.Timezone;
+import tech.fertavora.apitesting.clients.worldtimeapi.dtos.TimezoneDTO;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class WorldTimeTests {
-    // todo add try catch for assertion custom
     @DataProvider(name = "TimezonesDataProvider")
     public Object[][] timezonesDataSet() {
         return new Object[][] {
@@ -23,23 +22,53 @@ public class WorldTimeTests {
 
     @Test(priority = 1)
     public void requestTimezones(){
-        ValidatableResponse response = TimezoneEndpoint.getTimezones()
-                .spec(TimezoneEndpoint.getRespSpec(200, ContentType.JSON));
-        String[] timezones = response.extract().as(String[].class);
-        Assert.assertTrue(timezones.length > 10);
+        ValidatableResponse response = TimezoneEndpoint.getTimezones();
+        try{
+            response.spec(TimezoneEndpoint.getRespSpec(200, ContentType.JSON));
+            String[] timezones = response.extract().as(String[].class);
+            Assert.assertTrue(timezones.length > 10);
+        } catch (AssertionError assertionError) {
+            throw new AssertionError(
+                    TimezoneEndpoint.getFailedRequestErrorMessage(
+                            TimezoneEndpoint.getCustomRequest(),
+                            assertionError.getMessage(),
+                            response
+                    ),
+                    assertionError);
+        }
     }
 
     @Test(priority = 2, dataProvider = "TimezonesDataProvider")
     public void requestTimezone(String timezoneParam){
-        ValidatableResponse response = TimezoneEndpoint.getTimezone(timezoneParam)
-                .spec(TimezoneEndpoint.getRespSpec(200, ContentType.JSON));
-        Timezone timezone = response.extract().as(Timezone.class);
-        Assert.assertEquals(timezone.getTimezone(), timezoneParam);
+        ValidatableResponse response = TimezoneEndpoint.getTimezoneByName(timezoneParam);
+        try {
+            response.spec(TimezoneEndpoint.getRespSpec(200, ContentType.JSON));
+            TimezoneDTO timezoneDTO = response.extract().as(TimezoneDTO.class);
+            Assert.assertEquals(timezoneDTO.getTimezone(), timezoneParam);
+        } catch (AssertionError assertionError) {
+            throw new AssertionError(
+                    TimezoneEndpoint.getFailedRequestErrorMessage(
+                            TimezoneEndpoint.getCustomRequest(),
+                            assertionError.getMessage(),
+                            response
+                    ),
+                    assertionError);
+        }
     }
 
     @Test(priority = 3)
     public void failedRequest(){
-        ValidatableResponse response = TimezoneEndpoint.getTimezone("sarasa");
-        response.spec(TimezoneEndpoint.getRespSpec(404, ContentType.JSON));
+        ValidatableResponse response = TimezoneEndpoint.getTimezoneByName("mustfail");
+        try {
+            response.spec(TimezoneEndpoint.getRespSpec(404, ContentType.JSON));
+        } catch (AssertionError assertionError) {
+            throw new AssertionError(
+                    TimezoneEndpoint.getFailedRequestErrorMessage(
+                            TimezoneEndpoint.getCustomRequest(),
+                            assertionError.getMessage(),
+                            response
+                    ),
+                    assertionError);
+        }
     }
 }
